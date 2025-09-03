@@ -609,7 +609,7 @@ class _PinCodeTextFieldState extends State<PinCodeTextField>
     if (_inputList[index!].isEmpty && _hintAvailable) {
       return Text(
         widget.hintCharacter!,
-        key: ValueKey(_inputList[index]),
+        key: ValueKey(index),
         style: _hintStyle,
       );
     }
@@ -623,13 +623,13 @@ class _PinCodeTextFieldState extends State<PinCodeTextField>
             gradient: widget.textGradient!,
             child: Text(
               text,
-              key: ValueKey(_inputList[index]),
+              key: ValueKey(index),
               style: _textStyle.copyWith(color: Colors.white),
             ),
           )
         : Text(
           text,
-      key: ValueKey(_inputList[index]),
+      key: ValueKey(index),
           style: _textStyle,
         );
   }
