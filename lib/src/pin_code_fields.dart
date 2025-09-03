@@ -609,6 +609,7 @@ class _PinCodeTextFieldState extends State<PinCodeTextField>
     if (_inputList[index!].isEmpty && _hintAvailable) {
       return Semantics(
         identifier: "otpFor$index",
+        label: "otpFor$index",
         child: Text(
           widget.hintCharacter!,
           key: ValueKey(_inputList[index]),
@@ -626,6 +627,7 @@ class _PinCodeTextFieldState extends State<PinCodeTextField>
             gradient: widget.textGradient!,
             child: Semantics(
               identifier: "otpFor$index",
+              label: "otpFor$index",
               child: Text(
                 text,
                 key: ValueKey(_inputList[index]),
@@ -635,6 +637,7 @@ class _PinCodeTextFieldState extends State<PinCodeTextField>
           )
         : Semantics(
             identifier: "otpFor$index",
+            label: "otpFor$index",
             child: Text(
               text,
               key: ValueKey(_inputList[index]),
