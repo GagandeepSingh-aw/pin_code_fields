@@ -612,7 +612,7 @@ class _PinCodeTextFieldState extends State<PinCodeTextField>
         label: "otpFor$index",
         child: Text(
           widget.hintCharacter!,
-          key: ValueKey(_inputList[index]),
+          key: ValueKey(index),
           style: _hintStyle,
         ),
       );
@@ -630,7 +630,7 @@ class _PinCodeTextFieldState extends State<PinCodeTextField>
               label: "otpFor$index",
               child: Text(
                 text,
-                key: ValueKey(_inputList[index]),
+                key: ValueKey(index),
                 style: _textStyle.copyWith(color: Colors.white),
               ),
             ),
@@ -640,7 +640,7 @@ class _PinCodeTextFieldState extends State<PinCodeTextField>
             label: "otpFor$index",
             child: Text(
               text,
-              key: ValueKey(_inputList[index]),
+              key: ValueKey(index),
               style: _textStyle,
             ),
           );
