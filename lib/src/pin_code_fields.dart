@@ -607,14 +607,10 @@ class _PinCodeTextFieldState extends State<PinCodeTextField>
     }
 
     if (_inputList[index!].isEmpty && _hintAvailable) {
-      return Semantics(
-        identifier: "otpFor$index",
-        label: "otpFor$index",
-        child: Text(
-          widget.hintCharacter!,
-          key: ValueKey(index),
-          style: _hintStyle,
-        ),
+      return Text(
+        widget.hintCharacter!,
+        key: ValueKey("otpFor$index"),
+        style: _hintStyle,
       );
     }
 
@@ -625,25 +621,17 @@ class _PinCodeTextFieldState extends State<PinCodeTextField>
     return widget.textGradient != null
         ? Gradiented(
             gradient: widget.textGradient!,
-            child: Semantics(
-              identifier: "otpFor$index",
-              label: "otpFor$index",
-              child: Text(
-                text,
-                key: ValueKey(index),
-                style: _textStyle.copyWith(color: Colors.white),
-              ),
-            ),
-          )
-        : Semantics(
-            identifier: "otpFor$index",
-            label: "otpFor$index",
             child: Text(
               text,
-              key: ValueKey(index),
-              style: _textStyle,
+              key: ValueKey("otpFor$index"),
+              style: _textStyle.copyWith(color: Colors.white),
             ),
-          );
+          )
+        : Text(
+          text,
+      key: ValueKey("otpFor$index"),
+          style: _textStyle,
+        );
   }
 
 // selects the right fill color for the field
