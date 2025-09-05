@@ -607,10 +607,13 @@ class _PinCodeTextFieldState extends State<PinCodeTextField>
     }
 
     if (_inputList[index!].isEmpty && _hintAvailable) {
-      return Text(
-        widget.hintCharacter!,
-        key: ValueKey('$index'),
-        style: _hintStyle,
+      return Semantics(
+        label: 'otpFor$index',
+        child: Text(
+          widget.hintCharacter!,
+          key: ValueKey('$index'),
+          style: _hintStyle,
+        ),
       );
     }
 
@@ -621,16 +624,22 @@ class _PinCodeTextFieldState extends State<PinCodeTextField>
     return widget.textGradient != null
         ? Gradiented(
             gradient: widget.textGradient!,
-            child: Text(
-              text,
-              key: ValueKey('$index'),
-              style: _textStyle.copyWith(color: Colors.white),
+            child: Semantics(
+              label: 'otpFor$index',
+              child: Text(
+                text,
+                key: ValueKey('$index'),
+                style: _textStyle.copyWith(color: Colors.white),
+              ),
             ),
           )
-        : Text(
-          text,
-      key: ValueKey('$index'),
-          style: _textStyle,
+        : Semantics(
+      label: 'otpFor$index',
+      child: Text(
+            text,
+                key: ValueKey('$index'),
+            style: _textStyle,
+          ),
         );
   }
 
